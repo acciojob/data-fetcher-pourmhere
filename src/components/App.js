@@ -33,13 +33,9 @@ const App = () => {
     return <div>Loading...</div>;
   } else {
     return (
-      <ul>
-        {items.map((item) => (
-          <li key={item.id}>
-            {item.name} {item.price}
-          </li>
-        ))}
-      </ul>
+      <div>
+        <pre>{JSON.stringify(data, null, 2)}</pre>
+      </div>
     );
   }
 };
