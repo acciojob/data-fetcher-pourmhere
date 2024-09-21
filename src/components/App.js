@@ -1,5 +1,4 @@
-import React from "react";
-import "./../styles/App.css";
+import React, { useEffect, useState } from "react";
 
 const App = () => {
   const [error, setError] = useState(null);
@@ -10,16 +9,13 @@ const App = () => {
   // this useEffect will run once
   // similar to componentDidMount()
   useEffect(() => {
-    fetch("https://api.example.com/items")
+    fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then(
         (result) => {
           setIsLoaded(true);
           setItems(result);
         },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
         (error) => {
           setIsLoaded(true);
           setError(error);
@@ -34,7 +30,7 @@ const App = () => {
   } else {
     return (
       <div>
-        <pre>{JSON.stringify(data, null, 2)}</pre>
+        <pre>{JSON.stringify(items, null, 2)}</pre>
       </div>
     );
   }
