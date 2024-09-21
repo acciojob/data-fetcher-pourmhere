@@ -1,7 +1,7 @@
 import React from "react";
 import "./../styles/App.css";
 
-const App = () =>  const [error, setError] = useState(null);
+const App = () => { const [error, setError] = useState(null);
 const [isLoaded, setIsLoaded] = useState(false);
 const [items, setItems] = useState([]);
 
@@ -9,7 +9,7 @@ const [items, setItems] = useState([]);
 // this useEffect will run once
 // similar to componentDidMount()
 useEffect(() => {
-  fetch("https://dummyjson.com/products")
+  fetch("https://api.example.com/items")
     .then(res => res.json())
     .then(
       (result) => {
