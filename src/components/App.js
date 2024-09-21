@@ -7,7 +7,7 @@ const App = () => {
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
-      .then((result) => { 
+      .then((result) => {
         setData(result);
         console.log(result);
       });
@@ -15,7 +15,7 @@ const App = () => {
 
   return (
     <div>
-       <pre>{JSON.stringify(data, null, 2)}</pre>
+      <pre>{JSON.stringify(data, null, 2)}</pre>
     </div>
   );
 };
